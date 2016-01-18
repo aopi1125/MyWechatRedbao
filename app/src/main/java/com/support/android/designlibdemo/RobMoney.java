@@ -52,8 +52,17 @@ public class RobMoney extends AccessibilityService {
         AccessibilityNodeInfo ani = getRootInActiveWindow();
         if(ani != null){
             List<AccessibilityNodeInfo> list = ani.findAccessibilityNodeInfosByText("拆红包");
+            boolean flag = false;
             for(AccessibilityNodeInfo n : list){
+                flag = true;
                 n.performAction(AccessibilityNodeInfo.ACTION_CLICK);
+            }
+            //新版
+            if(!flag){
+                AccessibilityNodeInfo aaa = ani.getChild(3);
+                if(aaa != null){
+                    aaa.performAction(AccessibilityNodeInfo.ACTION_CLICK);
+                }
             }
         }
     }
