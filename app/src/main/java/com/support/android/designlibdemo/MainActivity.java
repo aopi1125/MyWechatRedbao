@@ -76,6 +76,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+
+                Intent it = new Intent(MainActivity.this, SnowActivity.class);
+                startActivity(it);
             }
         });
 
